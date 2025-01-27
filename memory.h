@@ -14,7 +14,7 @@ namespace offsets {
     uintptr_t playerPos = 0x28;
     uintptr_t playerLookX = 0x0034;
     uintptr_t playerLookY = 0x0038;
-    uintptr_t ammoAddress = 0x00860408; // I need to get offset
+    uintptr_t ammoAddress = 0x00860408; // I need to get offset / base
     uintptr_t zAxisOffset = 0x30;
     }
 
