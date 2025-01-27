@@ -1,9 +1,8 @@
-#ifndef MEMORY_H
-#define MEMORY_H
+#pragma once
 
 #include <Windows.h>
 
-// Offsets for chaning memory
+// Offsets for changing memory
 namespace offsets {
     uintptr_t player = 0x195404;
     uintptr_t gravity = 0x0048;
@@ -14,17 +13,14 @@ namespace offsets {
     uintptr_t playerPos = 0x28;
     uintptr_t playerLookX = 0x0034;
     uintptr_t playerLookY = 0x0038;
-    uintptr_t ammoAddress = 0x00860408; // I need to get offset / base
+    uintptr_t ammoAddress = 0x00860408; // I need to get offset
     uintptr_t zAxisOffset = 0x30;
-    }
+}
 
-    bool ReadMemory(HANDLE hProcess, uintptr_t address, void* value, size_t size) {
-        return ReadProcessMemory(hProcess, (LPCVOID)address, value, size, NULL);
-    }
+bool ReadMemory(HANDLE hProcess, uintptr_t address, void* value, size_t size) {
+    return ReadProcessMemory(hProcess, (LPCVOID)address, value, size, NULL);
+}
 
-    bool WriteMemory(HANDLE hProcess, uintptr_t address, void* value, size_t size) {
-        return WriteProcessMemory(hProcess, (LPCVOID)address, value, size, NULL);
-    }
-
-
-#endif
+bool WriteMemory(HANDLE hProcess, uintptr_t address, void* value, size_t size) {
+    return WriteProcessMemory(hProcess, (LPCVOID)address, value, size, NULL);
+}
